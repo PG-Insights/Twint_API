@@ -20,8 +20,8 @@ def create_query(*args):
 
 
 def return_query_results(
-        query: str,
-        instance: str):
+        query: str
+    ) -> subprocess.stdout:
     global TWINT_API_DIR
     chdir(TWINT_API_DIR)
     cmd = [
@@ -32,7 +32,10 @@ def return_query_results(
         query,
         '-Instance',
         'birdsite.xanny.family',  
-    ]  # If Instance needs to be modified use a value from https://github.com/zedeus/nitter/wiki/Instances
+        '-Format',
+        'json',
+    ]
+    # If Instance needs to be modified use a value from https://github.com/zedeus/nitter/wiki/Instances
 
     process = subprocess.run(
         cmd, 
@@ -66,8 +69,6 @@ if __name__ == '__main__':
     )
     json_str = return_query_results(
         query_str, 
-        args.instance, 
-        args.save_format
     )
     response_json = parse_json_returned(
         json_str
@@ -76,14 +77,10 @@ if __name__ == '__main__':
         response_json, 
         lines=True
     )
-    save_name = f'{datetime.now()}_{args.instance.replace(".", "_")}.csv'
     df.to_csv(
         Path(
             TWINT_API_DIR, 
-            save_name
+            f'{datetime.now()}_{args.instance.replace(".", "_")}.csv'
         )
     )
-    for col in df.columns:
-        print(df[col])
-        print()
-   
+       

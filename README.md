@@ -1,14 +1,17 @@
 # Twint Zero API Twitter Query
 
-This is a Python script that uses Twint Zero to perform a Twitter query and save the result in a CSV file. Twint Zero is a lightweight version of Twint that runs faster and with less overhead.
+This script runs a "Twint Zero" API Twitter query and returns the results in CSV format. It uses the `main.go` script from [zedeus/nitter](https://github.com/zedeus/nitter) to perform the query.
+
 
 ## Prerequisites
 
 Before using this script, please make sure you have the following software installed:
-
-- Python 3.7 or higher
+- [Go](https://golang.org/doc/install) must be installed
 - Go 1.16 or higher
 - Twint Zero
+- Python 3.10 or higher
+- pip install pandas
+
 
 To install Twint Zero, follow these steps:
 
@@ -59,25 +62,26 @@ pip install -r requirements.txt
 python main.py [query] [instance] [format]
 ```
 
-where `[query]` is a string representing your Twitter query, `[instance]` is the instance of the Nitter server to use, and `[format]` is the desired output format ("csv" or "json").
 
-### Example
+## Usage
+
+Run the following command to perform a Twitter query:
 
 ```bash
-python main.py "from:elonmusk since:2022-01-01 until:2022-01-31" birdsite.xanny.family csv
+python main.py "from:elonmusk since:2022-01-01 until:2022-01-31"
 ```
 
-This will run a Twitter query for all tweets from Elon Musk between January 1, 2022 and January 31, 2022, using the birdsite.xanny.family instance of the Nitter server, and saving the result in CSV format.
+`<query_string>` where `[query]` is a string representing your Twitter query as described in [igorbrigadir/twitter-advanced-search](https://github.com/igorbrigadir/twitter-advanced-search).
+
+This will run a Twitter query for all tweets from Elon Musk between January 1, 2022 and January 31, 2022 and save the result in CSV format.
+
+By default, the script uses the `birdsite.xanny.family` instance of nitter, but you can modify this by changing the `-Instance` parameter in `return_query_results()` function.
+
 
 ## Output
 
-The script will output the following:
-
-1. A list of the columns in the CSV file
-2. A blank line
-3. The values of each column for each row in the CSV file
-
 The CSV file will be saved in the same directory as the script and will be named with the date and time of the query and the instance used for the query.
+
 
 ## Contributing
 
