@@ -21,5 +21,6 @@
 *.csv
 bin/
 lib/
+lib64
 lib64/
 pyvenv.cfg
