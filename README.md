@@ -58,7 +58,7 @@ pip install -r requirements.txt
 4. Run the script using the following command:
 
 ```bash
-python main.py [query] [instance] [format]
+python twint_api.py [query]
 ```
 
 
