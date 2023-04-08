@@ -21,7 +21,7 @@ def create_query(*args):
 
 def return_query_results(
         query: str
-    ) -> subprocess.stdout:
+    ) -> subprocess:
     global TWINT_API_DIR
     chdir(TWINT_API_DIR)
     cmd = [
@@ -61,11 +61,7 @@ if __name__ == '__main__':
     parser.add_argument(
         'query', 
         nargs='?', 
-        default=[
-            'from:LetMOPLay', 
-            'within_time:72h', 
-            'filter:has_engagement'
-        ],
+        default='from:LetMOPLay within_time:48h filter:has_engagement',
         help='Twitter query string: https://github.com/igorbrigadir/twitter-advanced-search'
     )
     args = parser.parse_args()
@@ -82,10 +78,17 @@ if __name__ == '__main__':
         response_json, 
         lines=True
     )
+    response_dir = Path(
+        TWINT_API_DIR,
+        'twint-responses'
+    )
+    response_dir.mkdir(exist_ok=True)
+    save_name = f'{datetime.now()}_{args.query.replace(".|:", "_")}'
     df.to_csv(
         Path(
-            TWINT_API_DIR, 
-            f'{datetime.now()}_{args.instance.replace(".", "_")}.csv'
+            response_dir, 
+            f'{save_name}.csv'
         )
     )
+    print(f'Export name: {save_name}')
        

@@ -64,31 +64,40 @@ python main.py [query] [instance] [format]
 
 ## Usage
 
-Run the following command to perform a Twitter query:
+1. Clone this repository to your local machine
+2. Open your terminal and navigate to the directory where you cloned the repository
+3. Run the following command to install the Python dependencies:
 
-```bash
-python main.py "from:elonmusk since:2022-01-01 until:2022-01-31"
-```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-`<query_string>` where `[query]` is a string representing your Twitter query as described in [igorbrigadir/twitter-advanced-search](https://github.com/igorbrigadir/twitter-advanced-search).
+4. Run the script using the following command:
 
-This will run a Twitter query for all tweets from Elon Musk between January 1, 2022 and January 31, 2022 and save the result in CSV format.
+   ```bash
+   python main.py [query]
+   ```
 
-By default, the script uses the `birdsite.xanny.family` instance of nitter, but you can modify this by changing the `-Instance` parameter in `return_query_results()` function.
+   where `[query]` is a string representing your Twitter query as described in [igorbrigadir/twitter-advanced-search](https://github.com/igorbrigadir/twitter-advanced-search).
+
+   This will run a Twitter query based on the given query string and save the result in CSV format.
+
+   By default, the script uses the `birdsite.xanny.family` instance of nitter, but you can modify this by changing the `-Instance` parameter in the `return_query_results()` function in `main.py`.
 
 
 ## Output
 
-The CSV file will be saved in the same directory as the script and will be named with the date and time of the query and the instance used for the query.
+The CSV file will be saved in the `twint-responses` directory in the same directory as the script, and will be named with the date and time of the query and the query string used for the query.
 
 
 ## Contributing
 
 If you would like to contribute to this project, please feel free to create a pull request or open an issue.
 
+
 ## Questions/Issues
 
-If you have any questions or issues with this script fork it and fix it
+If you have any questions or issues with this script, please feel free to fork it and fix it yourself.
 
 ## License
 
@@ -96,5 +105,6 @@ This project is licensed under the MIT License.
 
 ## Credits
 
-This project was created by Dale Ludwinski for [Let MO Play](https://letmoplay.com) 
-Visit us on [Twitter](https://twitter.com/LetMOPlay)
+This project was created by Dale Ludwinski for [Let MO Play](https://letmoplay.com). 
+
+Visit us on [Twitter](https://twitter.com/LetMOPlay).
