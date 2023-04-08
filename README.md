@@ -6,8 +6,7 @@ This script runs a "Twint Zero" API Twitter query and returns the results in CSV
 ## Prerequisites
 
 Before using this script, please make sure you have the following software installed:
-- [Go](https://golang.org/doc/install) must be installed
-- Go 1.16 or higher
+- [Go](https://golang.org/doc/install) 1.16 or higher
 - Twint Zero
 - Python 3.10 or higher
 - pip install pandas
