@@ -1,30 +1,50 @@
-# Twint Zero
-Like Twint, but zero fat.
+# Twint Zero API Twitter Query
 
-# Installation
-1) `git clone https://github.com/twintproject/twint-zero`
-2) `cd twint-zero`
-3) `go mod init twint-zero`
-4) `go mod tidy`
+This is a Python script that uses Twint Zero API to perform a Twitter query and save the result in a CSV file.
 
-# Usage
-- Without compiling: `go run main.go -Query $QUERY -Instance $INSTANCE -Format $FORMAT`
-- If you compiled... well at this point you are supposed to know.
+## Prerequisites
 
-## CLI Arguments
-1) `$QUERY`: [Here](https://github.com/igorbrigadir/twitter-advanced-search) you go.
-2) `$INSTANCE`: [Here](https://github.com/zedeus/nitter/wiki/Instances) you go.
-2) `$FORMAT`: "csv" or "json".
+Before using this script, please make sure you have the following software installed:
 
-# Questions/issues
-> Sir, the bill is: five GitHub stars, two forks and one retweet.
+- Python 3.7 or higher
+- Go 1.16 or higher
 
-That being quoted, feel free to reach out.
+## Usage
 
-# License 
-MIT
+1. Clone this repository to your local machine
+2. Open your terminal and navigate to the directory where you cloned the repository
+3. Run the following command to install the Python dependencies:
 
-# Credits
-[Francesco Poldi](https://twitter.com/noneprivacy)
+```bash
+pip install -r requirements.txt
+```
 
-[Simon Archer](https://mastodon.social/@archy_bold): JSON formatting and attachments parsing
+4. Run the script using the following command:
+
+```bash
+python main.py [query]
+```
+
+where `[query]` is a string representing your Twitter query.
+
+### Example
+
+```bash
+python main.py "from:elonmusk since:2022-01-01 until:2022-01-31"
+```
+
+This will run a Twitter query for all tweets from Elon Musk between January 1, 2022 and January 31, 2022.
+
+## Output
+
+The script will output the following:
+
+1. A list of the columns in the CSV file
+2. A blank line
+3. The values of each column for each row in the CSV file
+
+The CSV file will be saved in the same directory as the script and will be named with the date and time of the query and the instance used for the query.
+
+## Contributing
+
+If you would like to contribute to this project, please feel free to create a pull request or open an issue.
