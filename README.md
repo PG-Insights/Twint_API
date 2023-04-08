@@ -85,7 +85,7 @@ If you would like to contribute to this project, please feel free to create a pu
 
 ## Questions/Issues
 
-If you have any questions or issues with this script or the Twint Zero API, please feel free to reach out to the Twint team.
+If you have any questions or issues with this script fork it and fix it
 
 ## License
 
