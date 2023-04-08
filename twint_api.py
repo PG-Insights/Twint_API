@@ -65,7 +65,7 @@ if __name__ == '__main__':
     parser.add_argument(
         'query', 
         nargs='?', 
-        default='from:LetMOPLay within_time:72h filter:has_engagement lang:en',
+        default='to:LetMOPLay within_time:72h filter:has_engagement lang:en',
         help='Twitter query string: https://github.com/igorbrigadir/twitter-advanced-search'
     )
     args = parser.parse_args()
