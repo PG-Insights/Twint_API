@@ -17,13 +17,13 @@ To install Twint Zero, follow these steps:
 1. Clone the Twint Zero repository to your local machine:
 
    ```bash
-   git clone https://github.com/twintproject/twint-zero
+   git clone https://github.com/PG_Insights/Twint_API
    ```
 
 2. Navigate to the cloned repository:
 
    ```bash
-   cd twint-zero
+   cd Twint_API
    ```
 
 3. Initialize the Go module:
