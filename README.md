@@ -93,6 +93,5 @@ This project is licensed under the MIT License.
 
 ## Credits
 
-This project was created by Dale Ludwinski for Let MO Play 
-[Let MO Play](https://letmoplay.com) 
-[Let MO Play](https://twitter.com/LetMOPlay)
+This project was created by Dale Ludwinski for [Let MO Play](https://letmoplay.com) 
+[Twitter](https://twitter.com/LetMOPlay)
