@@ -34,6 +34,8 @@ def return_query_results(
         'birdsite.xanny.family',  
         '-Format',
         'json',
+        '-lang',
+        'en'
     ]
     # If Instance needs to be modified use a value from https://github.com/zedeus/nitter/wiki/Instances
 
