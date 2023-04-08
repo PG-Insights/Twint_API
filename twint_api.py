@@ -16,7 +16,11 @@ from pathlib import Path
 TWINT_API_DIR = Path(__file__).parent
 
 def create_query(*args):
-    return ' '.join(*args)
+    if len([arg for arg in args]) > 1:
+        return ' '.join(*args)
+    else:
+        return args
+    
 
 
 def return_query_results(
@@ -34,8 +38,6 @@ def return_query_results(
         'birdsite.xanny.family',  
         '-Format',
         'json',
-        '-lang',
-        'en'
     ]
     # If Instance needs to be modified use a value from https://github.com/zedeus/nitter/wiki/Instances
 
@@ -63,13 +65,11 @@ if __name__ == '__main__':
     parser.add_argument(
         'query', 
         nargs='?', 
-        default='from:LetMOPLay within_time:48h filter:has_engagement',
+        default='from:LetMOPLay within_time:72h filter:has_engagement lang:en',
         help='Twitter query string: https://github.com/igorbrigadir/twitter-advanced-search'
     )
     args = parser.parse_args()
-    query_str = create_query(
-        args.query
-    )
+    query_str = args.query
     json_str = return_query_results(
         query_str, 
     )
@@ -85,7 +85,7 @@ if __name__ == '__main__':
         'twint-responses'
     )
     response_dir.mkdir(exist_ok=True)
-    save_name = f'{datetime.now()}_{args.query}'
+    save_name = f'{datetime.now()}_{query_str}'
     df.to_csv(
         Path(
             response_dir, 
