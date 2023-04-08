@@ -83,7 +83,7 @@ if __name__ == '__main__':
         'twint-responses'
     )
     response_dir.mkdir(exist_ok=True)
-    save_name = f'{datetime.now()}_{args.query.replace(".|:", "_")}'
+    save_name = f'{datetime.now()}_{args.query}'
     df.to_csv(
         Path(
             response_dir, 
