@@ -90,5 +90,5 @@ if __name__ == '__main__':
             f'{save_name}.csv'
         )
     )
-    print(f'Export name: {save_name}')
+    print(f'\nExport name: {save_name}\n')
        
